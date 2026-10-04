@@ -7,7 +7,13 @@ const authClient = createAuthClient();
 
 export function NeonAuthProviders({ children }: { children: React.ReactNode }) {
   return (
-    <NeonAuthUIProvider authClient={authClient} defaultTheme="light">
+    <NeonAuthUIProvider
+      authClient={authClient}
+      defaultTheme="system"
+      social={{
+        providers: ['google'],
+      }}
+    >
       {children}
     </NeonAuthUIProvider>
   );
