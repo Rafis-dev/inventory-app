@@ -9,7 +9,7 @@ export function NeonAuthProviders({ children }: { children: React.ReactNode }) {
   return (
     <NeonAuthUIProvider
       authClient={authClient}
-      defaultTheme="system"
+      defaultTheme="light"
       social={{
         providers: ['google'],
       }}

@@ -1,6 +1,14 @@
 import Sidebar from '@/components/sidebar';
+import { getCurrentUser } from '@/lib/auth';
 
-export default function DashboardPage() {
+import { prisma } from '@/lib/prisma';
+
+export default async function DashboardPage() {
+  const user = await getCurrentUser();
+  const userId = user.id;
+
+  const totalProducts = await prisma.product.count({ where: { userId } });
+
   return (
     <div className="min-h-screen bg-gray-50">
       <Sidebar currentPath="/dashboard" />

@@ -1,11 +1,4 @@
-import { PrismaClient } from '@/lib/generated/prisma/client';
-import { PrismaPg } from '@prisma/adapter-pg';
-
-const adapter = new PrismaPg({
-  connectionString: process.env.DATABASE_URL!,
-});
-
-const prisma = new PrismaClient({ adapter });
+import { prisma } from '@/lib/prisma';
 
 async function main() {
   const demoUserId = '78601893-8ccd-477f-9561-46b6247b5df0';
