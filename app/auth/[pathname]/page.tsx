@@ -1,5 +1,8 @@
-import { AuthView } from '@neondatabase/auth/react';
+import { auth } from '@/lib/auth';
+import { AuthView } from '@neondatabase/auth-ui';
+
 import Link from 'next/link';
+import { redirect } from 'next/navigation';
 
 export default async function AuthPage({
   params,
@@ -10,7 +13,7 @@ export default async function AuthPage({
   return (
     <div className="flex min-h-[100dvh] w-full flex-col items-center justify-center px-4 py-8 bg-gradient-to-br from-purple-50 to-purple-100">
       <div className="max-w-md w-full space-y-8">
-        <AuthView pathname={pathname} />
+        <AuthView path={pathname} />
         <Link href="/">Go back home</Link>
       </div>
     </div>
