@@ -11,8 +11,15 @@ export default function Pagination({
   currentPage,
   totalPages,
   searchParams,
+  baseUrl,
 }: PaginationProps) {
   if (totalPages <= 1) return null;
+
+  const getPageUrl = (page: number) => {
+    const params = new URLSearchParams({ ...searchParams, page: String(page) });
+
+    return `${baseUrl}?${params.toString()}`;
+  };
 
   const getVisiblePages = () => {
     const delta = 2;
@@ -32,6 +39,7 @@ export default function Pagination({
     } else {
       rangeWithDots.push(1);
     }
+
     rangeWithDots.push(...range);
 
     if (currentPage + delta < totalPages - 1) {
@@ -43,18 +51,41 @@ export default function Pagination({
     return rangeWithDots;
   };
 
+  const visiblePages = getVisiblePages();
+
   return (
     <nav className="flex items-center justify-center gap-1">
       <Link
-        href=""
-        className={`flex items-center px-3 py-2 text-sm fonr-medium rounded-lg ${currentPage <= 1 ? 'text-gray-400 cursor-not-allowed bg-gray-100' : 'text-gray-700 hover:bg-gray-100 bg-white border border-gray-300'}`}
+        href={getPageUrl(currentPage - 1)}
+        className={`flex items-center px-3 py-2 text-sm font-medium rounded-lg ${currentPage <= 1 ? 'text-gray-400 pointer-events-none cursor-not-allowed bg-gray-100' : 'text-gray-700 hover:bg-gray-100 bg-white border border-gray-300'}`}
         aria-disabled={currentPage <= 1}
       >
         <ChevronLeft /> Previous
       </Link>
+      {visiblePages.map((page, key) => {
+        if (page === '...') {
+          return (
+            <span key={key} className="px-3 py-2 text-sm text-gray-500">
+              ...
+            </span>
+          );
+        }
+        const pageNumber = page as number;
+        const isCurrentPage = pageNumber === currentPage;
+
+        return (
+          <Link
+            key={key}
+            href={getPageUrl(pageNumber)}
+            className={`px-3 py-2 text-sm font-medium rounded-lg ${isCurrentPage ? 'bg-purple-600 text-white' : 'text-gray-700 hover:bg-gray-100 bg-white border border-gray-300'}`}
+          >
+            {pageNumber}
+          </Link>
+        );
+      })}
       <Link
-        href=""
-        className={`flex items-center px-3 py-2 text-sm fonr-medium rounded-lg ${currentPage >= totalPages ? 'text-gray-400 cursor-not-allowed bg-gray-100' : 'text-gray-700 hover:bg-gray-100 bg-white border border-gray-300'}`}
+        href={getPageUrl(currentPage + 1)}
+        className={`flex items-center px-3 py-2 text-sm font-medium rounded-lg ${currentPage >= totalPages ? 'text-gray-400 pointer-events-none cursor-not-allowed  bg-gray-100' : 'text-gray-700 hover:bg-gray-100 bg-white border border-gray-300'}`}
         aria-disabled={currentPage >= totalPages}
       >
         Next

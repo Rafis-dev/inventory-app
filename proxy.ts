@@ -5,10 +5,5 @@ export default auth.middleware({
 });
 
 export const config = {
-  matcher: [
-    '/dashboard/:path*',
-    '/inventory/:path*',
-    '/add-product/:path*',
-    '/settings/:path*',
-  ],
+  matcher: ['/dashboard', '/inventory', '/add-product', '/settings'],
 };
