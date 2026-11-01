@@ -41,10 +41,10 @@ export default async function InventoryPage({
           <div className="flex items-center justify-between">
             <div className="">
               <h1 className="text-2xl font-semibold text-gray-900">
-                Inventory
+                Инвентарь
               </h1>
               <p className="text-sm text-gray-500">
-                Manage your products and track inventory levels
+                Управляйте товарами и отслеживайте уровень запасов
               </p>
             </div>
           </div>
@@ -57,11 +57,11 @@ export default async function InventoryPage({
               <input
                 type="text"
                 name="q"
-                placeholder="Search products"
+                placeholder="Искать продукты"
                 className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:border-transparent"
               />
               <button className="px-6 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 cursor-pointer">
-                Search
+                Поиск
               </button>
             </form>
           </div>
@@ -71,22 +71,22 @@ export default async function InventoryPage({
               <thead className="bg-gray-50">
                 <tr>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
-                    Name
+                    Имя
                   </th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
-                    SKU
+                    Артикул
                   </th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
-                    Price
+                    Цена
                   </th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
-                    Quantity
+                    Кол-во
                   </th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
-                    Low Stock At
+                    Низкое количество при
                   </th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
-                    Actions
+                    Действия
                   </th>
                 </tr>
               </thead>
@@ -117,7 +117,7 @@ export default async function InventoryPage({
                       >
                         <input type="hidden" name="id" value={product.id} />
                         <button className="text-red-600 hover:text-red-900 cursor-pointer">
-                          Delete
+                          Удалить
                         </button>
                       </form>
                     </td>

@@ -1,12 +1,11 @@
 'use client';
 import Sidebar from '@/components/sidebar';
-// import { getCurrentUser } from '@/lib/auth';
+
 import { AccountView } from '@neondatabase/auth/react';
 import { usePathname } from 'next/navigation';
 
 export default function SettingsPage() {
   const pathname = usePathname();
-  // const user = await getCurrentUser();
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -16,9 +15,11 @@ export default function SettingsPage() {
         <div className="mb-8">
           <div className="flex items-center justify-between">
             <div className="">
-              <h1 className="text-2xl font-semibold text-gray-900">Settings</h1>
+              <h1 className="text-2xl font-semibold text-gray-900">
+                Настройки
+              </h1>
               <p className="text-sm text-gray-500">
-                Manage your account settings and preferences
+                Управляйте настройками аккаунта
               </p>
             </div>
           </div>

@@ -15,10 +15,10 @@ export default async function AddProductPage() {
           <div className="flex items-center justify-between">
             <div className="">
               <h1 className="text-2xl font-semibold text-gray-900">
-                Add Product
+                Добавить Продукт
               </h1>
               <p className="text-sm text-gray-500">
-                Add a new product to your inventory
+                Добавьте новый товар в свой ассортимент
               </p>
             </div>
           </div>
@@ -32,7 +32,7 @@ export default async function AddProductPage() {
                   htmlFor="name"
                   className="block text-sm font-medium text-gray-700 mb-2"
                 >
-                  Product Name *
+                  Имя продукта *
                 </label>
                 <input
                   type="text"
@@ -50,7 +50,7 @@ export default async function AddProductPage() {
                     htmlFor="quantity"
                     className="block text-sm font-medium text-gray-700 mb-2"
                   >
-                    Quantity *
+                    Количество *
                   </label>
                   <input
                     type="number"
@@ -67,7 +67,7 @@ export default async function AddProductPage() {
                     htmlFor="price"
                     className="block text-sm font-medium text-gray-700 mb-2"
                   >
-                    Price *
+                    Цена *
                   </label>
                   <input
                     type="number"
@@ -87,7 +87,7 @@ export default async function AddProductPage() {
                   htmlFor="sku"
                   className="block text-sm font-medium text-gray-700 mb-2"
                 >
-                  SKU (optional)
+                  Артикул (не обязательно)
                 </label>
                 <input
                   type="text"
@@ -104,7 +104,7 @@ export default async function AddProductPage() {
                   htmlFor="lowStockAt"
                   className="block text-sm font-medium text-gray-700 mb-2"
                 >
-                  Low Stock At (optional)
+                  Низкий остаток при (не обязательно)
                 </label>
                 <input
                   type="number"
@@ -122,13 +122,13 @@ export default async function AddProductPage() {
                   type="submit"
                   className="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700"
                 >
-                  Add Product
+                  Добавить продукт
                 </button>
                 <Link
                   href="/inventory"
                   className="px-6 py-3 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300"
                 >
-                  Cancel
+                  Отмена
                 </Link>
               </div>
             </form>

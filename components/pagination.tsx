@@ -60,7 +60,7 @@ export default function Pagination({
         className={`flex items-center px-3 py-2 text-sm font-medium rounded-lg ${currentPage <= 1 ? 'text-gray-400 pointer-events-none cursor-not-allowed bg-gray-100' : 'text-gray-700 hover:bg-gray-100 bg-white border border-gray-300'}`}
         aria-disabled={currentPage <= 1}
       >
-        <ChevronLeft /> Previous
+        <ChevronLeft /> Пред
       </Link>
       {visiblePages.map((page, key) => {
         if (page === '...') {
@@ -88,7 +88,7 @@ export default function Pagination({
         className={`flex items-center px-3 py-2 text-sm font-medium rounded-lg ${currentPage >= totalPages ? 'text-gray-400 pointer-events-none cursor-not-allowed  bg-gray-100' : 'text-gray-700 hover:bg-gray-100 bg-white border border-gray-300'}`}
         aria-disabled={currentPage >= totalPages}
       >
-        Next
+        След
         <ChevronRight />
       </Link>
     </nav>

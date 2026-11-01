@@ -8,24 +8,21 @@ import { usePathname } from 'next/navigation';
 export default function Sidebar() {
   const pathname = usePathname();
   const navigation = [
-    { name: 'Dashboard', href: '/dashboard', icon: BarChart3 },
-    { name: 'Inventory', href: '/inventory', icon: Package },
-    { name: 'Add Product', href: '/add-product', icon: Plus },
-    { name: 'Settings', href: '/account/settings', icon: Settings },
+    { name: 'Главная панель', href: '/dashboard', icon: BarChart3 },
+    { name: 'Ивентарь', href: '/inventory', icon: Package },
+    { name: 'Добавить продукт', href: '/add-product', icon: Plus },
+    { name: 'Настройки', href: '/account/settings', icon: Settings },
   ];
   return (
     <div className="fixed left-0 top-0 bg-gray-900 text-white w-64 min-h-screen p-6 z-10">
       <div className="mb-8">
         <div className="flex items-center space-x-2 mb-4">
           <BarChart3 className="w-7 h-7" />
-          <span className="text-lg font-semibold">Inventory App</span>
+          <span className="text-lg font-semibold">Учет запасов</span>
         </div>
       </div>
 
       <nav className="space-y-1">
-        <div className="text-sm font-semibold text-gray-400 uppercase">
-          Inventory
-        </div>
         {navigation.map((item, key) => {
           const IconComponent = item.icon;
           const isActive = pathname === item.href;

@@ -17,6 +17,10 @@ export function NeonAuthProviders({ children }: { children: React.ReactNode }) {
         // Общие кнопки и элементы управления
         SAVE: 'Сохранить изменения',
         NAME: 'Имя',
+        NAME_PLACEHOLDER: 'Имя',
+
+        PASSWORD: 'Пароль',
+        PASSWORD_PLACEHOLDER: 'Пароль',
         SETTINGS: 'Настройки',
         EMAIL_DESCRIPTION: 'Введите почту для входа',
         NAME_DESCRIPTION: 'Введите ваше имя',
@@ -44,7 +48,15 @@ export function NeonAuthProviders({ children }: { children: React.ReactNode }) {
         SIGN_IN: 'Войти в аккаунт',
         SIGN_IN_DESCRIPTION: 'Добро пожаловать назад',
         SIGN_UP: 'Регистрация',
+
+        SIGN_UP_DESCRIPTION: 'Введите ваши данные для создания аккаунта',
         OR_CONTINUE_WITH: 'Или продолжить через',
+        SIGN_IN_ACTION: 'Войти',
+        SIGN_UP_ACTION: 'Создать аккаунт',
+        FORGOT_PASSWORD_LINK: 'Забыли пароль?',
+        SIGN_IN_WITH: 'Войти через',
+        DONT_HAVE_AN_ACCOUNT: 'Нет аккаунта?',
+        ALREADY_HAVE_AN_ACCOUNT: 'Уже есть аккаунт?',
       }}
     >
       {children}

@@ -14,7 +14,7 @@ export default async function AuthPage({
     <div className="flex min-h-[100dvh] w-full flex-col items-center justify-center px-4 py-8 bg-gradient-to-br from-purple-50 to-purple-100">
       <div className="max-w-md w-full space-y-8">
         <AuthView path={pathname} redirectTo="/dashboard" />
-        <Link href="/">Go back home</Link>
+        <Link href="/">На главную</Link>
       </div>
     </div>
   );
