@@ -1,9 +1,12 @@
+'use client';
 import Sidebar from '@/components/sidebar';
-import { getCurrentUser } from '@/lib/auth';
+// import { getCurrentUser } from '@/lib/auth';
 import { AccountView } from '@neondatabase/auth/react';
+import { usePathname } from 'next/navigation';
 
-export default async function SettingsPage() {
-  const user = await getCurrentUser();
+export default function SettingsPage() {
+  const pathname = usePathname();
+  // const user = await getCurrentUser();
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -20,13 +23,13 @@ export default async function SettingsPage() {
             </div>
           </div>
         </div>
-      </main>
 
-      <div className="max-w-6xl">
-        <div className="bg-white rounded-lg border border-gray-200 p-6">
-          <AccountView />
+        <div className="max-w-6xl">
+          <div className="bg-white rounded-lg border border-gray-200 p-6">
+            <AccountView pathname={pathname} />
+          </div>
         </div>
-      </div>
+      </main>
     </div>
   );
 }
