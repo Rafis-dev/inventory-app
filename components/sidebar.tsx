@@ -1,17 +1,17 @@
+'use client';
+
 import { UserButton } from '@neondatabase/auth/react';
 import { BarChart3, Package, Plus, Settings } from 'lucide-react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
-export default function Sidebar({
-  currentPath = '/dashboard',
-}: {
-  currentPath: string;
-}) {
+export default function Sidebar() {
+  const pathname = usePathname();
   const navigation = [
     { name: 'Dashboard', href: '/dashboard', icon: BarChart3 },
     { name: 'Inventory', href: '/inventory', icon: Package },
     { name: 'Add Product', href: '/add-product', icon: Plus },
-    { name: 'Settings', href: '/settings', icon: Settings },
+    { name: 'Settings', href: '/account/settings', icon: Settings },
   ];
   return (
     <div className="fixed left-0 top-0 bg-gray-900 text-white w-64 min-h-screen p-6 z-10">
@@ -28,7 +28,8 @@ export default function Sidebar({
         </div>
         {navigation.map((item, key) => {
           const IconComponent = item.icon;
-          const isActive = currentPath === item.href;
+          const isActive = pathname === item.href;
+
           return (
             <Link
               href={item.href}
