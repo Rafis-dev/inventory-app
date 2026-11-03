@@ -64,10 +64,10 @@ function MainContentSkeleton({
   showSidebar?: boolean;
 }) {
   return (
-    <main className={showSidebar ? 'ml-64 p-8' : 'p-8'}>
+    <main className={showSidebar ? 'md:ml-64 p-8' : 'p-8 '}>
       {/* Header skeleton */}
       <div className="mb-8">
-        <Skeleton className="h-8 w-32 mb-2" />
+        <Skeleton className="pt-50 h-8 w-32 mb-2 md:pt-0" />
         <Skeleton className="h-4 w-64" />
       </div>
 
