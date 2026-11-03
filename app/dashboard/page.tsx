@@ -79,9 +79,10 @@ export default async function DashboardPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       <Sidebar />
-      <main className="ml-64 p-8">
+
+      <main className="pt-40 md:pt-0 md:ml-64 p-4 md:p-8">
         {/* Header */}
-        <div className="mb-8">
+        <div className="mb-6 md:mb-8">
           <div className="flex items-center justify-between">
             <div>
               <h1 className="text-2xl font-semibold text-gray-900">
@@ -94,18 +95,21 @@ export default async function DashboardPage() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8 mb-6 md:mb-8">
           {/* Key metrics */}
-          <div className="bg-white rounded-lg border border-gray-200 p-6">
+          <div className="bg-white rounded-lg border border-gray-200 p-4 md:p-6">
             <h2 className="text-lg font-semibold text-gray-900 mb-6">
               Ключевые метрики
             </h2>
-            <div className="grid grid-cols-3 gap-6">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-gray-900">
+
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6">
+              <div className="text-center min-w-0">
+                <div className="text-2xl sm:text-3xl font-bold text-gray-900">
                   {totalProducts}
                 </div>
-                <div className="text-sm text-gray-600">Всего продуктов</div>
+                <div className="text-xs sm:text-sm text-gray-600">
+                  Всего продуктов
+                </div>
                 <div className="flex items-center justify-center mt-1">
                   <span className="text-xs text-green-600">
                     +{totalProducts}
@@ -114,11 +118,13 @@ export default async function DashboardPage() {
                 </div>
               </div>
 
-              <div className="text-center">
-                <div className="text-3xl font-bold text-gray-900">
+              <div className="text-center min-w-0">
+                <div className="text-2xl sm:text-3xl font-bold text-gray-900">
                   ${Number(totalValue).toFixed(0)}
                 </div>
-                <div className="text-sm text-gray-600">Общая цена</div>
+                <div className="text-xs sm:text-sm text-gray-600">
+                  Общая цена
+                </div>
                 <div className="flex items-center justify-center mt-1">
                   <span className="text-xs text-green-600">
                     +${Number(totalValue).toFixed(0)}
@@ -127,11 +133,13 @@ export default async function DashboardPage() {
                 </div>
               </div>
 
-              <div className="text-center">
-                <div className="text-3xl font-bold text-gray-900">
+              <div className="text-center min-w-0">
+                <div className="text-2xl sm:text-3xl font-bold text-gray-900">
                   {lowStock}
                 </div>
-                <div className="text-sm text-gray-600">Низкое количество</div>
+                <div className="text-xs sm:text-sm text-gray-600">
+                  Низкое количество
+                </div>
                 <div className="flex items-center justify-center mt-1">
                   <span className="text-xs text-green-600">+{lowStock}</span>
                   <TrendingUp className="w-3 h-3 text-green-600 ml-1" />
@@ -140,25 +148,27 @@ export default async function DashboardPage() {
             </div>
           </div>
 
-          {/* inventory over time */}
-          <div className="bg-white rounded-lg border border-gray-200 p-6">
+          {/* Inventory over time */}
+          <div className="bg-white rounded-lg border border-gray-200 p-4 md:p-6">
             <div className="flex items-center justify-between mb-6">
               <h2>Новые товары в неделю</h2>
             </div>
+
             <div className="h-48">
               <ProductsChart data={weeklyProductsData} />
             </div>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-          {/* stock levels */}
-          <div className="bg-white rounded-lg border border-gray-200 p-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8 mb-6 md:mb-8">
+          {/* Stock levels */}
+          <div className="bg-white rounded-lg border border-gray-200 p-4 md:p-6">
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-lg font-semibold text-gray-900">
                 Уровни запасов
               </h2>
             </div>
+
             <div className="space-y-3">
               {recent.map((product, key) => {
                 const stockLevel =
@@ -173,26 +183,30 @@ export default async function DashboardPage() {
                   'bg-yellow-600',
                   'bg-green-600',
                 ];
+
                 const textColors = [
                   'text-red-600',
                   'text-yellow-600',
                   'text-green-600',
                 ];
+
                 return (
                   <div
                     key={key}
-                    className="flex items-center justify-between p-3 rounded-lg bg-gray-50"
+                    className="flex items-center justify-between gap-2 p-3 rounded-lg bg-gray-50"
                   >
-                    <div className="flex items-center space-x-3">
+                    <div className="flex items-center space-x-3 min-w-0">
                       <div
-                        className={`w-3 h-3 rounded-full ${bgColors[stockLevel]}`}
+                        className={`w-3 h-3 rounded-full shrink-0 ${bgColors[stockLevel]}`}
                       />
-                      <span className="text-sm font-medium text-gray-900">
+
+                      <span className="text-sm font-medium text-gray-900 truncate">
                         {product.name}
                       </span>
                     </div>
+
                     <div
-                      className={`text-sm font-medium ${textColors[stockLevel]}`}
+                      className={`text-sm font-medium shrink-0 ${textColors[stockLevel]}`}
                     >
                       {product.quantity} units
                     </div>
@@ -201,15 +215,17 @@ export default async function DashboardPage() {
               })}
             </div>
           </div>
+
           {/* Efficiency section */}
-          <div className="bg-white rounded-lg border border-gray-200 p-6">
+          <div className="bg-white rounded-lg border border-gray-200 p-4 md:p-6">
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-lg font-semibold text-gray-900">
                 Эффективность
               </h2>
             </div>
+
             <div className="flex items-center justify-center">
-              <div className="relative w-48 h-48 flex items-center justify-center">
+              <div className="relative w-40 h-40 sm:w-48 sm:h-48 flex items-center justify-center">
                 {/* Круговая диаграмма на conic-gradient */}
                 <div
                   className="absolute inset-0 rounded-full"
@@ -217,7 +233,8 @@ export default async function DashboardPage() {
                     background: `conic-gradient(#7c3aed 0% ${inStockPercentage}%, #e5e7eb ${inStockPercentage}% 100%)`,
                   }}
                 />
-                {/* Внутренний белый круг, который делает из сплошного круга кольцо (border-8) */}
+
+                {/* Внутренний белый круг */}
                 <div className="absolute inset-[8px] bg-white rounded-full flex items-center justify-center">
                   <div className="text-center">
                     <div className="text-2xl font-bold text-gray-900">
@@ -228,6 +245,7 @@ export default async function DashboardPage() {
                 </div>
               </div>
             </div>
+
             <div className="mt-6 space-y-2">
               <div className="flex items-center justify-between text-sm text-gray-600">
                 <div className="flex items-center space-x-2">
@@ -235,12 +253,14 @@ export default async function DashboardPage() {
                   <span>В наличии ({inStockPercentage}%)</span>
                 </div>
               </div>
+
               <div className="flex items-center justify-between text-sm text-gray-600">
                 <div className="flex items-center space-x-2">
                   <div className="w-3 h-3 rounded-full bg-purple-600" />
                   <span>Мало в наличии ({lowStockPercentage}%)</span>
                 </div>
               </div>
+
               <div className="flex items-center justify-between text-sm text-gray-600">
                 <div className="flex items-center space-x-2">
                   <div className="w-3 h-3 rounded-full bg-gray-200" />
