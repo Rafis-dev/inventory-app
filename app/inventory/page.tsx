@@ -37,7 +37,7 @@ export default async function InventoryPage({
     <div className="min-h-screen bg-gray-50">
       <Sidebar />
 
-      <main className="pt-60 md:pt-0 md:ml-64 p-4 md:p-8">
+      <main className="pt-53 md:pt-0 md:ml-64 p-4 md:p-8">
         <div className="mb-6 md:mb-8">
           <div className="flex items-center justify-between">
             <div>

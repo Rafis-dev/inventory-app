@@ -11,7 +11,7 @@ export default function SettingsPage() {
     <div className="min-h-screen bg-gray-50">
       <Sidebar />
 
-      <main className="ml-64 p-8">
+      <main className="pt-53 p-2 md:ml-64 md:pt-8 lg:p-4">
         <div className="mb-8">
           <div className="flex items-center justify-between">
             <div className="">
@@ -26,7 +26,7 @@ export default function SettingsPage() {
         </div>
 
         <div className="max-w-6xl">
-          <div className="bg-white rounded-lg border border-gray-200 p-6">
+          <div className="p-2 bg-white rounded-lg overflow-auto border border-gray-200 md:p-4">
             <AccountView pathname={pathname} />
           </div>
         </div>
