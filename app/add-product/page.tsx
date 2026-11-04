@@ -10,7 +10,7 @@ export default async function AddProductPage() {
     <div className="min-h-screen bg-gray-50">
       <Sidebar />
 
-      <main className="ml-64 p-8">
+      <main className="pt-60 p-4 md:ml-64 md:pt-8 md:p-8">
         <div className="mb-8">
           <div className="flex items-center justify-between">
             <div className="">
@@ -117,16 +117,16 @@ export default async function AddProductPage() {
                 />
               </div>
 
-              <div className="flex gap-5">
+              <div className="block md:flex gap-5">
                 <button
                   type="submit"
-                  className="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700"
+                  className="w-full mb-5 md:mb-0 md:w-auto px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700"
                 >
                   Добавить продукт
                 </button>
                 <Link
                   href="/inventory"
-                  className="px-6 py-3 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300"
+                  className="inline-block text-center w-full md:w-auto px-6 py-3 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300"
                 >
                   Отмена
                 </Link>
