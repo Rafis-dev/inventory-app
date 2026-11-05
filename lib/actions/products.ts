@@ -18,12 +18,16 @@ export async function deleteProduct(formData: FormData) {
   const id = String(formData.get('id') || '');
 
   await prisma.product.deleteMany({
-    where: { id: id, userId: user.id },
+    where: { id: id, userId: user?.id },
   });
 }
 
 export async function createProduct(formData: FormData) {
   const user = await getCurrentUser();
+
+  if (!user?.id) {
+    throw new Error('Unauthorized');
+  }
 
   const parsed = ProductSchema.safeParse({
     name: formData.get('name'),
@@ -39,7 +43,7 @@ export async function createProduct(formData: FormData) {
 
   try {
     await prisma.product.create({
-      data: { ...parsed.data, userId: user.id },
+      data: { ...parsed.data, userId: user?.id },
     });
     redirect('/inventory');
   } catch (error) {
