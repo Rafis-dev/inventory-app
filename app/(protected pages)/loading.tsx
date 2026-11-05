@@ -24,8 +24,8 @@ function LoadingSidebar() {
 
   return (
     <div className="fixed left-0 top-0 bg-gray-900 text-white w-full md:w-64 h-auto md:min-h-screen md:h-screen p-4 md:p-6 z-10 flex flex-col md:block">
-      <div className="mb-4 md:mb-8 shrink-0">
-        <div className="flex items-center space-x-2 mb-4">
+      <div className="mb-2 md:mb-8 shrink-0">
+        <div className="mb-2 flex items-center space-x-2 md:mb-4">
           <BarChart3 className="w-7 h-7" />
           <span className="text-lg font-semibold">Учет запасов</span>
         </div>
@@ -48,7 +48,7 @@ function LoadingSidebar() {
         })}
       </nav>
 
-      <div className="mt-4 md:mt-0 md:absolute md:bottom-0 md:left-0 md:right-0 p-4 md:p-6 border-t border-gray-700 shrink-0">
+      <div className="mt-2 md:mt-0 md:absolute md:bottom-0 md:left-0 md:right-0 p-2 md:p-6 border-t border-gray-700 shrink-0">
         <div className="flex items-center justify-between">
           <UserButton />
         </div>
