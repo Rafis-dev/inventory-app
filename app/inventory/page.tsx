@@ -3,6 +3,7 @@ import Sidebar from '@/components/sidebar';
 import { deleteProduct } from '@/lib/actions/products';
 import { getCurrentUser } from '@/lib/auth';
 import { prisma } from '@/lib/prisma';
+export const dynamic = 'force-dynamic';
 
 export default async function InventoryPage({
   searchParams,
