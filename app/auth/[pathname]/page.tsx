@@ -1,7 +1,5 @@
 import { AuthView } from '@neondatabase/auth/react/ui';
 
-import Link from 'next/link';
-
 export const dynamic = 'force-dynamic';
 export default async function AuthPage({
   params,
@@ -14,7 +12,6 @@ export default async function AuthPage({
     <div className="flex min-h-[100dvh] w-full flex-col items-center justify-center px-4 py-8 bg-gradient-to-br from-purple-50 to-purple-100">
       <div className="max-w-md w-full space-y-8">
         <AuthView path={pathname} redirectTo="/dashboard" />
-        <Link href="/">На главную</Link>
       </div>
     </div>
   );
