@@ -231,7 +231,7 @@ export default async function DashboardPage() {
                 <div
                   className="absolute inset-0 rounded-full"
                   style={{
-                    background: `conic-gradient(#7c3aed 0% ${inStockPercentage}%, #e5e7eb ${inStockPercentage}% 100%)`,
+                    background: `conic-gradient(#9810fa 0% ${inStockPercentage}%, #e5e7eb ${inStockPercentage}% 100%)`,
                   }}
                 />
 
@@ -250,14 +250,14 @@ export default async function DashboardPage() {
             <div className="mt-6 space-y-2">
               <div className="flex items-center justify-between text-sm text-gray-600">
                 <div className="flex items-center space-x-2">
-                  <div className="w-3 h-3 rounded-full bg-purple-200" />
+                  <div className="w-3 h-3 rounded-full bg-purple-600" />
                   <span>В наличии ({inStockPercentage}%)</span>
                 </div>
               </div>
 
               <div className="flex items-center justify-between text-sm text-gray-600">
                 <div className="flex items-center space-x-2">
-                  <div className="w-3 h-3 rounded-full bg-purple-600" />
+                  <div className="w-3 h-3 rounded-full bg-purple-200" />
                   <span>Мало в наличии ({lowStockPercentage}%)</span>
                 </div>
               </div>
