@@ -8,7 +8,7 @@ export const dynamic = 'force-dynamic';
 
 export default async function DashboardPage() {
   const user = await getCurrentUser();
-  const userId = user.id;
+  const userId = user?.id;
 
   const [totalProducts, lowStock, allProducts] = await Promise.all([
     prisma.product.count({ where: { userId } }),

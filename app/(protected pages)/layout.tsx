@@ -4,7 +4,7 @@ import {
   SignedOut,
 } from '@neondatabase/auth/react/ui';
 
-export default function DashboardLayout({
+export default function ProtectedPagesLayout({
   children,
 }: {
   children: React.ReactNode;
