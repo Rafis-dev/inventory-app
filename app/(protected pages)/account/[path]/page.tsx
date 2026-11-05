@@ -11,7 +11,7 @@ export default function SettingsPage() {
     <div className="min-h-screen bg-gray-50">
       <Sidebar />
 
-      <main className="pt-53 p-2 md:ml-64 md:pt-8 lg:p-4">
+      <main className="pt-53 p-2 md:ml-64 md:pt-8 md:p-8">
         <div className="mb-8">
           <div className="flex items-center justify-between">
             <div className="">
